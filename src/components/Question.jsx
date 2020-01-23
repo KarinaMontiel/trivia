@@ -28,6 +28,7 @@ class Question extends Component {
         <h1 className="questionBox">Here is the question</h1>
         <br></br>
         <div>{ansRow}</div>
+        <br></br>
         <button> next </button>
       </div>
     );

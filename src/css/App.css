@@ -7,4 +7,22 @@ body {
   text-align: center;
 }
 
+.questionBox{
+border: double 3px #63b7af;
 
+}
+
+.choices{
+border:none;
+font-size: large;
+
+} 
+
+.choices:hover{
+  color:#ee8572;
+  font-size: xx-large;
+}
+
+.clicked{
+  /* add ID to button that is clicked to change color of answer choices  */
+}
