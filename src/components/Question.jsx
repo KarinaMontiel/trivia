@@ -12,18 +12,19 @@ class Question extends Component {
         // Fill in this constructor
         this.choices= choices;
         this.correct = correct_choice_index;
-        this.qtext= question_text;
+        this.qtext= question_text ? question_text : ":0";
        }
       }
 
-    let answers = ["yes", "OvO", "no", "^_^''"];
-    let ansRow = [];
-    for (let i=0; i<answers.length; i++) {
-      ansRow.push(<Answer choice={answers[i]} />);
-    }
+      let q1 = new Loader(["48", "13", "52", "50"],3, "How many states are in the United States?");
+      // let q1 = new Loader(["48", "13", "52", "50"],3, "How many states are in the United States?");
+      console.log(q1);
 
-  
-    
+    // let answers = ["yes", "OvO", "no", "^_^''"];
+    let ansRow = [];
+    // for (let i=0; i<answers.length; i++) {
+    //   ansRow.push(<Answer choice={answers[i]} />);
+    // }
 
     return (
       <div>
@@ -46,7 +47,11 @@ class Question extends Component {
         <button> next </button>
       </div>
     );
+
+    }
   }
-}
+  
 
 export default Question;
+
+ 
