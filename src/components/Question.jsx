@@ -6,12 +6,7 @@ import Answer from './AnswerChoice';
 class Question extends Component {
   
   render() {
-    let answers = ["yes", "OvO", "no", "^_^''"];
-    let ansRow = [];
-    for (let i=0; i<answers.length; i++) {
-      ansRow.push(<Answer choice={answers[i]} />);
-    }
-
+    // every new question: needs "new Loader"
     class Loader {
       constructor(choices, correct_choice_index, question_text){
         // Fill in this constructor
@@ -19,8 +14,16 @@ class Question extends Component {
         this.correct = correct_choice_index;
         this.qtext= question_text;
        }
-  
+      }
+
+    let answers = ["yes", "OvO", "no", "^_^''"];
+    let ansRow = [];
+    for (let i=0; i<answers.length; i++) {
+      ansRow.push(<Answer choice={answers[i]} />);
     }
+
+  
+    
 
     return (
       <div>
@@ -39,15 +42,7 @@ class Question extends Component {
         <br></br>
         <div>{ansRow}</div>
         <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
+   
         <button> next </button>
       </div>
     );
