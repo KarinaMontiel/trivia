@@ -1,5 +1,6 @@
 import firebase from 'firebase';
 
+
 export function buildFirebase() {
   if (firebase.apps.length === 0) {
     const app = firebase.initializeApp({
