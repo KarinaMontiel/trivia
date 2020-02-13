@@ -8,7 +8,7 @@ var database = buildFirebase();
 var databaseRef = database.ref("/questions");
 databaseRef.once("value").then(function(data) {
     const base = Object.values(data.val());
-    console.log(base);
+    //console.log(base);
     ReactDOM.render(<App data={base}/>, document.getElementById('root'));
 });
 
