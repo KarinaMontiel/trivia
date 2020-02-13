@@ -2,29 +2,28 @@ import React, { Component } from 'react';
 // import components
 import Answer from './AnswerChoice';
 
+// every new question: needs "new Loader"
+class Loader {
+  constructor(choices, correct_choice_index, question_text){
+    // Fill in this constructor
+    this.choices= choices;
+    this.correct = correct_choice_index;
+    this.qtext= question_text ? question_text : ":0";
+   }
+  }
 
 class Question extends Component {
   
   render() {
-    // every new question: needs "new Loader"
-    class Loader {
-      constructor(choices, correct_choice_index, question_text){
-        // Fill in this constructor
-        this.choices= choices;
-        this.correct = correct_choice_index;
-        this.qtext= question_text ? question_text : ":0";
-       }
-      }
 
-      let q1 = new Loader(["48", "13", "52", "50"],3, "How many states are in the United States?");
-      // let q1 = new Loader(["48", "13", "52", "50"],3, "How many states are in the United States?");
-      console.log(q1);
+    let q1 = new Loader(["48", "13", "52", "50"],3, "How many states are in the United States?");
+    console.log(q1);
 
-     let answers = ["yes", "OvO", "no", "^_^''"];
+    //let answers = ["yes", "OvO", "no", "^_^''"];
     let ansRow = [];
-    for (let i=0; i<answers.length; i++) {
-      ansRow.push(<Answer choice={answers[i]} />);
-    }
+    //for (let i=0; i<answers.length; i++) {
+      //ansRow.push(<Answer choice={answers[i]} />);
+    //}
 
     return (
       <div>
@@ -51,9 +50,6 @@ class Question extends Component {
     }
   }
   
-
-
-
 export default Question;
 
  
