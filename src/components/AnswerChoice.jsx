@@ -10,7 +10,6 @@ export default class Answer extends Component {
     }
 
     handleClick() {
-        // let newStatus = this.state.status;
         this.setState({status: "true"})
         console.log(this.state.status);
     }
