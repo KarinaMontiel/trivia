@@ -16,16 +16,14 @@ import Question from './Question.jsx';
 class App extends Component { 
 
   render() {
- 
+    let base = this.props.data;
+    //console.log(base);
 
-    //let q1 = new Loader(["48", "13", "52", "50"],3, "How many states are in the United States?");
-    // let q1 = new Loader(["48", "13", "52", "50"],3, "How many states are in the United States?");
-    //console.log(q1);
       
     return (
       <div className="app">
         Trivia!
-        <Question />
+        <Question why={base}/>
       </div>
     );
   }

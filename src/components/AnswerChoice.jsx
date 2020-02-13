@@ -2,17 +2,7 @@ import React, { Component } from 'react';
 import Question from './Question.jsx';
 
 export default class Answer extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            status: "false",
-        }
-    }
-
-    handleClick() {
-        this.setState({status: "true"})
-        console.log(this.state.status);
-    }
+    
 
     render() {
         let answers = ["a", "b", "c", "d"];

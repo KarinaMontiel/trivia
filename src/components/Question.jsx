@@ -13,12 +13,23 @@ class Loader {
   }
 
 class Question extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+        index: 0,
+    }
+}
+
+handleClick() {
+    this.setState({index: this.state.index+1})
+    console.log(this.state.index);
+}
   
   render() {
-
-    let q1 = new Loader(["48", "13", "52", "50"],3, "How many states are in the United States?");
-    console.log(q1);
-
+    let q = this.props.why;
+    let qText = q[this.state.index].question_text;
+    console.log(qText);
+    
     //let answers = ["yes", "OvO", "no", "^_^''"];
     let ansRow = [];
     //for (let i=0; i<answers.length; i++) {
@@ -38,12 +49,12 @@ class Question extends Component {
 
           <next button>
         */}
-        <h1 className="questionBox">Here is the question</h1>
+        <h1 className="questionBox">{qText}</h1>
         <br></br>
         <div>{ansRow}</div>
         <br></br>
    
-        <button> next </button>
+        <button onClick={() => this.handleClick()}> next </button>
       </div>
     );
 
