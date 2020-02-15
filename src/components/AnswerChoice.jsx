@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import Question from './Question.jsx';
 
 export default class Answer extends Component {
     constructor(props) {

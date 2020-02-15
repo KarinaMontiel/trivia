@@ -37,7 +37,6 @@ class Question extends Component {
 
     return (
       <div>
-        Add your QuestionText, Reset Button and AnswerButtons here.
         <h1 className="questionBox">{qText}</h1>
         <br></br>
         {ansRow}
