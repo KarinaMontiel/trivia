@@ -32,7 +32,7 @@ class Question extends Component {
     let answers = q[this.state.index].choices;
     let ansRow = [];
     for (let i=0; i<answers.length; i++) {
-      ansRow.push(<Answer ansChoice={answers[i]} correct={q[this.state.index].correct_choice_index} />);
+      ansRow.push(<Answer ansChoice={answers[i]} correct={q[this.state.index].correct_choice_index} id={i} />);
     }
 
     return (
@@ -42,7 +42,7 @@ class Question extends Component {
         {ansRow}
         <br></br>
    
-        <button onClick={() => this.handleClick()}> next </button>
+        <button id="nextBtn" onClick={() => this.handleClick()}> next </button>
       </div>
     );
 

@@ -23,6 +23,7 @@ font-size: large;
   font-size: xx-large;
 }
 
-.clicked{
+.#clickId{
   /* add ID to button that is clicked to change color of answer choices  */
+  
 }
