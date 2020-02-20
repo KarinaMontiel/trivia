@@ -2,58 +2,53 @@ import React, { Component } from 'react';
 // import components
 import Answer from './AnswerChoice';
 
+// UNSUED : every new question: needs "new Loader"
+// class Loader {
+//   constructor(choices, correct_choice_index, question_text){
+//     // Fill in this constructor
+//     this.choices= choices;
+//     this.correct = correct_choice_index;
+//     this.qtext= question_text ? question_text : ":0";
+//   }
+// }
 
 class Question extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+        index: 0,
+    }
+  }
+
+  handleClick() {
+    this.setState({index: this.state.index+1})
+    console.log(this.state.index);
+  }
   
   render() {
-    // every new question: needs "new Loader"
-    class Loader {
-      constructor(choices, correct_choice_index, question_text){
-        // Fill in this constructor
-        this.choices= choices;
-        this.correct = correct_choice_index;
-        this.qtext= question_text ? question_text : ":0";
-       }
-      }
-
-      let q1 = new Loader(["48", "13", "52", "50"],3, "How many states are in the United States?");
-      // let q1 = new Loader(["48", "13", "52", "50"],3, "How many states are in the United States?");
-      console.log(q1);
-
-     let answers = ["yes", "OvO", "no", "^_^''"];
+    let q = this.props.why;
+    let qText = q[this.state.index].question_text;
+    
+    let answers = q[this.state.index].choices;
     let ansRow = [];
     for (let i=0; i<answers.length; i++) {
-      ansRow.push(<Answer choice={answers[i]} />);
+      ansRow.push(<Answer ansChoice={answers[i]} correct={q[this.state.index].correct_choice_index} />);
     }
 
     return (
       <div>
-        Add your QuestionText, Reset Button and AnswerButtons here.
-        {/*
-          framework:
-          <question>
-          <answer choice>
-          <answer choice>
-          <answer choice>
-          <answer choice>
-
-          <next button>
-        */}
-        <h1 className="questionBox">Here is the question</h1>
+        <h1 className="questionBox">{qText}</h1>
         <br></br>
-        <div>{ansRow}</div>
+        {ansRow}
         <br></br>
    
-        <button> next </button>
+        <button onClick={() => this.handleClick()}> next </button>
       </div>
     );
 
-    }
   }
+}
   
-
-
-
 export default Question;
 
  
