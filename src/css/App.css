@@ -1,6 +1,10 @@
 body {
   margin: 0;
   padding: 0;
+  background-image: radial-gradient(#9dbeff, #fed9ff);
+  background-repeat: no-repeat;
+  height: 100%;
+  width: auto;
 }
 
 .app {
@@ -8,22 +12,33 @@ body {
 }
 
 .questionBox{
-border: double 3px #63b7af;
+  border: double 3px #63b7af;
+}
 
+button {
+  text-decoration: none;
 }
 
 .choices{
-border:none;
-font-size: large;
-
-} 
+  border:none;
+  font-size: large;
+}
 
 .choices:hover{
   color:#ee8572;
   font-size: xx-large;
 }
 
-.#clickId{
-  /* add ID to button that is clicked to change color of answer choices  */
-  
+.gray {
+  color: gray;
+  border: none;
+}
+
+.green {
+  color: green;
+  border: none;
+}
+
+.black {
+  color: black;
 }
