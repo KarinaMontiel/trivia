@@ -13,11 +13,10 @@ export default class Answer extends Component {
 
     answerCheck = (event) => {
         let ans = this.props.correct;
-        console.log("correct answer choice: "+ans);
+        // console.log("correct answer choice: "+ans);
         let clickId = this.props.answerID;
-        // somehow the answerID is not being passed into here
-        console.log("clicked:"+clickId);
-        debugger;
+        // console.log("clicked:"+clickId);
+        // debugger;
         if (ans === clickId) {
             alert("correct!");
             this.setState({color: 'green'});
