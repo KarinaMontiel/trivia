@@ -11,11 +11,13 @@ export default class Answer extends Component {
         }
       }
 
-    answerCheck() {
+    answerCheck = (event) => {
         let ans = this.props.correct;
         console.log("correct answer choice: "+ans);
-        let clickId = this.props.id;
-        //console.log(clickId);
+        let clickId = this.props.answerID;
+        // somehow the answerID is not being passed into here
+        console.log("clicked:"+clickId);
+        debugger;
         if (ans === clickId) {
             alert("correct!");
             this.setState({color: 'green'});
@@ -23,29 +25,17 @@ export default class Answer extends Component {
             alert("incorrect! try again!");
             this.setState({color: 'gray'});
         }
-        //return this.state.correct;
+        return this.state.correct;
     }
 
     handleClick = () => {
-        let ans = this.props.correct;
-        console.log("correct answer choice: "+ans);
-        let clickId = this.props.id;
-        //console.log(clickId);
-        if (ans === clickId) {
-            alert("correct!");
-            this.setState({color: 'green'});
-        } else {
-            alert("incorrect! try again!");
-            this.setState({color: 'gray'});
-        }
-       // this.answerCheck();
-        //this.setState({color: 'black'});
+        this.answerCheck();
     }
 
     render() {
         return (
             <div>
-                <button id={this.clickId} className={this.state.choices, this.state.color} onClick={this.handleClick}>{this.props.ansChoice}</button>
+                <button id={this.clickId} className={this.state.choices, this.state.color} onClick={this.answerCheck}>{this.props.ansChoice}</button>
             </div>
         )
     }
